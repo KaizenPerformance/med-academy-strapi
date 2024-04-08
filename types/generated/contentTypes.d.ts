@@ -782,6 +782,26 @@ export interface ApiCourseCourse extends Schema.CollectionType {
   attributes: {
     title: Attribute.String & Attribute.Required & Attribute.Unique;
     description: Attribute.Text;
+    durationMonths: Attribute.Integer & Attribute.Required;
+    durationHours: Attribute.Integer & Attribute.Required;
+    banner: Attribute.Media & Attribute.Required;
+    startDate: Attribute.Date & Attribute.Required;
+    endDate: Attribute.Date & Attribute.Required;
+    classfication: Attribute.Enumeration<
+      [
+        'Semi extensivo',
+        'Extensivos 2024',
+        'Extensivos programados',
+        'Intesivo / HIIT',
+        'Reta final dominada',
+        'Hands On',
+        'Derma',
+        'TEEM',
+        'TEGO',
+        'CBC',
+        'Revalida'
+      ]
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -813,6 +833,14 @@ export interface ApiStudentStudent extends Schema.CollectionType {
   attributes: {
     name: Attribute.String & Attribute.Required & Attribute.Unique;
     avatar: Attribute.Media & Attribute.Required;
+    birth: Attribute.Date;
+    approved: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
+    collocation: Attribute.Integer;
+    email: Attribute.String & Attribute.Required & Attribute.Unique;
+    specialization: Attribute.String;
+    school: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

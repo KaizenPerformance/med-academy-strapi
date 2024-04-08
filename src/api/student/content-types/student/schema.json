@@ -18,12 +18,34 @@
       "unique": true
     },
     "avatar": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "birth": {
+      "type": "date"
+    },
+    "approved": {
+      "type": "boolean",
+      "default": false,
       "required": true
+    },
+    "collocation": {
+      "type": "integer"
+    },
+    "email": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "specialization": {
+      "type": "string"
+    },
+    "school": {
+      "type": "string"
     }
   }
 }
