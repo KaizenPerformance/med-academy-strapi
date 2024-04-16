@@ -1,5 +1,84 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface LandingPageCardAboutUs extends Schema.Component {
+  collectionName: 'components_landing_page_card_aboutuses';
+  info: {
+    displayName: 'cardAboutUs';
+    icon: 'apps';
+    description: '';
+  };
+  attributes: {
+    icon: Attribute.Text;
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 155;
+      }>;
+    linkTo: Attribute.String & Attribute.Required & Attribute.Unique;
+    image: Attribute.Media;
+  };
+}
+
+export interface LandingPageFaq extends Schema.Component {
+  collectionName: 'components_landing_page_faqs';
+  info: {
+    displayName: 'FAQ';
+    icon: 'apps';
+  };
+  attributes: {
+    question: Attribute.String &
+      Attribute.SetMinMaxLength<{
+        maxLength: 155;
+      }>;
+    response: Attribute.Text &
+      Attribute.SetMinMaxLength<{
+        maxLength: 455;
+      }>;
+  };
+}
+
+export interface LandingPageHighLights extends Schema.Component {
+  collectionName: 'components_landing_page_high_lights';
+  info: {
+    displayName: 'highLights';
+    icon: 'apps';
+  };
+  attributes: {
+    icon: Attribute.Media;
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 115;
+      }>;
+  };
+}
+
+export interface LandingPageUserTestmonials extends Schema.Component {
+  collectionName: 'components_landing_page_user_testmonials';
+  info: {
+    displayName: 'userTestmonials';
+    icon: 'apps';
+  };
+  attributes: {
+    avatar: Attribute.Media & Attribute.Required;
+    name: Attribute.String & Attribute.Required;
+    occupation: Attribute.String & Attribute.Required;
+    testmonials: Attribute.Text &
+      Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
+  };
+}
+
 declare module '@strapi/types' {
-  export module Shared {}
+  export module Shared {
+    export interface Components {
+      'landing-page.card-about-us': LandingPageCardAboutUs;
+      'landing-page.faq': LandingPageFaq;
+      'landing-page.high-lights': LandingPageHighLights;
+      'landing-page.user-testmonials': LandingPageUserTestmonials;
+    }
+  }
 }

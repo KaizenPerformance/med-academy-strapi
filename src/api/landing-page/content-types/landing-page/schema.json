@@ -1,0 +1,70 @@
+{
+  "kind": "singleType",
+  "collectionName": "landing_pages",
+  "info": {
+    "singularName": "landing-page",
+    "pluralName": "landing-pages",
+    "displayName": "LandingPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "courseTitle": {
+      "type": "string"
+    },
+    "courseDescription": {
+      "type": "text",
+      "required": true,
+      "default": "355"
+    },
+    "banners": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "aboutUs": {
+      "type": "text",
+      "maxLength": 188
+    },
+    "cardAboutUs": {
+      "displayName": "cardAboutUs",
+      "type": "component",
+      "repeatable": true,
+      "component": "landing-page.card-about-us"
+    },
+    "TestmonialsText": {
+      "type": "text",
+      "required": true,
+      "maxLength": 165
+    },
+    "HighLightsText": {
+      "type": "text",
+      "required": true,
+      "maxLength": 165
+    },
+    "faq": {
+      "displayName": "FAQ",
+      "type": "component",
+      "repeatable": true,
+      "component": "landing-page.faq"
+    },
+    "highLights": {
+      "displayName": "highLights",
+      "type": "component",
+      "repeatable": true,
+      "component": "landing-page.high-lights"
+    },
+    "userTestmonials": {
+      "displayName": "userTestmonials",
+      "type": "component",
+      "repeatable": true,
+      "component": "landing-page.user-testmonials"
+    }
+  }
+}

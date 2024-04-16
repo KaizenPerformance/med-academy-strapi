@@ -819,6 +819,58 @@ export interface ApiCourseCourse extends Schema.CollectionType {
   };
 }
 
+export interface ApiLandingPageLandingPage extends Schema.SingleType {
+  collectionName: 'landing_pages';
+  info: {
+    singularName: 'landing-page';
+    pluralName: 'landing-pages';
+    displayName: 'LandingPage';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    courseTitle: Attribute.String;
+    courseDescription: Attribute.Text &
+      Attribute.Required &
+      Attribute.DefaultTo<'355'>;
+    banners: Attribute.Media & Attribute.Required;
+    aboutUs: Attribute.Text &
+      Attribute.SetMinMaxLength<{
+        maxLength: 188;
+      }>;
+    cardAboutUs: Attribute.Component<'landing-page.card-about-us', true>;
+    TestmonialsText: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 165;
+      }>;
+    HighLightsText: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 165;
+      }>;
+    faq: Attribute.Component<'landing-page.faq', true>;
+    highLights: Attribute.Component<'landing-page.high-lights', true>;
+    userTestmonials: Attribute.Component<'landing-page.user-testmonials', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::landing-page.landing-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::landing-page.landing-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiStudentStudent extends Schema.CollectionType {
   collectionName: 'students';
   info: {
@@ -877,6 +929,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::course.course': ApiCourseCourse;
+      'api::landing-page.landing-page': ApiLandingPageLandingPage;
       'api::student.student': ApiStudentStudent;
     }
   }

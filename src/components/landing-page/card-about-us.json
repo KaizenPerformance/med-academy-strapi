@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_landing_page_card_aboutuses",
+  "info": {
+    "displayName": "cardAboutUs",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "text"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "maxLength": 155,
+      "required": true
+    },
+    "linkTo": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
