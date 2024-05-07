@@ -784,7 +784,7 @@ export interface ApiCourseCourse extends Schema.CollectionType {
     description: Attribute.Text;
     durationMonths: Attribute.Integer & Attribute.Required;
     durationHours: Attribute.Integer & Attribute.Required;
-    banner: Attribute.Media & Attribute.Required;
+    banner: Attribute.Media;
     startDate: Attribute.Date & Attribute.Required;
     endDate: Attribute.Date & Attribute.Required;
     classfication: Attribute.Enumeration<
