@@ -4,7 +4,7 @@
   "info": {
     "singularName": "landing-page",
     "pluralName": "landing-pages",
-    "displayName": "LandingPage",
+    "displayName": "HomePage",
     "description": ""
   },
   "options": {
@@ -12,18 +12,18 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "courseTitle": {
+    "headingTitle": {
       "type": "string"
     },
-    "courseDescription": {
+    "headingDescription": {
       "type": "text",
       "required": true,
       "default": "355"
     },
-    "banners": {
+    "mainVideo": {
       "type": "media",
-      "multiple": true,
-      "required": true,
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
       ]

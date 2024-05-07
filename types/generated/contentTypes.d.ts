@@ -824,18 +824,18 @@ export interface ApiLandingPageLandingPage extends Schema.SingleType {
   info: {
     singularName: 'landing-page';
     pluralName: 'landing-pages';
-    displayName: 'LandingPage';
+    displayName: 'HomePage';
     description: '';
   };
   options: {
     draftAndPublish: false;
   };
   attributes: {
-    courseTitle: Attribute.String;
-    courseDescription: Attribute.Text &
+    headingTitle: Attribute.String;
+    headingDescription: Attribute.Text &
       Attribute.Required &
       Attribute.DefaultTo<'355'>;
-    banners: Attribute.Media & Attribute.Required;
+    mainVideo: Attribute.Media;
     aboutUs: Attribute.Text &
       Attribute.SetMinMaxLength<{
         maxLength: 188;
