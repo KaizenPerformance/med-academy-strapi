@@ -1,5 +1,15 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface DestaquesCursoCourseHighlights extends Schema.Component {
+  collectionName: 'components_destaques_curso_course_highlights';
+  info: {
+    displayName: 'courseHighlights';
+  };
+  attributes: {
+    texto: Attribute.String & Attribute.Required;
+  };
+}
+
 export interface LandingPageCardAboutUs extends Schema.Component {
   collectionName: 'components_landing_page_card_aboutuses';
   info: {
@@ -75,6 +85,7 @@ export interface LandingPageUserTestmonials extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'destaques-curso.course-highlights': DestaquesCursoCourseHighlights;
       'landing-page.card-about-us': LandingPageCardAboutUs;
       'landing-page.faq': LandingPageFaq;
       'landing-page.high-lights': LandingPageHighLights;

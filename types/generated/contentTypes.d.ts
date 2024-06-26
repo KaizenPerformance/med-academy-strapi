@@ -768,6 +768,40 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiBlogPostBlogPost extends Schema.CollectionType {
+  collectionName: 'blog_posts';
+  info: {
+    singularName: 'blog-post';
+    pluralName: 'blog-posts';
+    displayName: 'Blog Post';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    coverImage: Attribute.Media & Attribute.Required;
+    excerpt: Attribute.String & Attribute.Required;
+    content: Attribute.RichText & Attribute.Required;
+    slug: Attribute.UID<'api::blog-post.blog-post', 'title'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::blog-post.blog-post',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::blog-post.blog-post',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCourseCourse extends Schema.CollectionType {
   collectionName: 'courses';
   info: {
@@ -781,27 +815,14 @@ export interface ApiCourseCourse extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String & Attribute.Required & Attribute.Unique;
-    description: Attribute.Text;
-    durationMonths: Attribute.Integer & Attribute.Required;
-    durationHours: Attribute.Integer & Attribute.Required;
-    banner: Attribute.Media;
-    startDate: Attribute.Date & Attribute.Required;
-    endDate: Attribute.Date & Attribute.Required;
-    classfication: Attribute.Enumeration<
-      [
-        'Semi extensivo',
-        'Extensivos 2024',
-        'Extensivos programados',
-        'Intesivo / HIIT',
-        'Reta final dominada',
-        'Hands On',
-        'Derma',
-        'TEEM',
-        'TEGO',
-        'CBC',
-        'Revalida'
-      ]
-    >;
+    description: Attribute.Text & Attribute.Required;
+    amount: Attribute.Integer & Attribute.Required;
+    slug: Attribute.UID<'api::course.course', 'title'> & Attribute.Required;
+    courseHighlights: Attribute.Component<
+      'destaques-curso.course-highlights',
+      true
+    > &
+      Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -928,6 +949,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::blog-post.blog-post': ApiBlogPostBlogPost;
       'api::course.course': ApiCourseCourse;
       'api::landing-page.landing-page': ApiLandingPageLandingPage;
       'api::student.student': ApiStudentStudent;

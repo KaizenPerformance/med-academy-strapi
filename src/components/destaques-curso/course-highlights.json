@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_destaques_curso_course_highlights",
+  "info": {
+    "displayName": "courseHighlights"
+  },
+  "options": {},
+  "attributes": {
+    "texto": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

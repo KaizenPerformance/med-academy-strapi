@@ -18,47 +18,24 @@
       "unique": true
     },
     "description": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
-    "durationMonths": {
+    "amount": {
       "type": "integer",
       "required": true
     },
-    "durationHours": {
-      "type": "integer",
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
       "required": true
     },
-    "banner": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "videos"
-      ]
-    },
-    "startDate": {
-      "type": "date",
+    "courseHighlights": {
+      "displayName": "courseHighlights",
+      "type": "component",
+      "repeatable": true,
+      "component": "destaques-curso.course-highlights",
       "required": true
-    },
-    "endDate": {
-      "type": "date",
-      "required": true
-    },
-    "classfication": {
-      "type": "enumeration",
-      "enum": [
-        "Semi extensivo",
-        "Extensivos 2024",
-        "Extensivos programados",
-        "Intesivo / HIIT",
-        "Reta final dominada",
-        "Hands On",
-        "Derma",
-        "TEEM",
-        "TEGO",
-        "CBC",
-        "Revalida"
-      ]
     }
   }
 }
