@@ -7,9 +7,6 @@
   },
   "options": {},
   "attributes": {
-    "icon": {
-      "type": "text"
-    },
     "title": {
       "type": "string",
       "required": true
@@ -19,17 +16,21 @@
       "maxLength": 155,
       "required": true
     },
-    "linkTo": {
-      "type": "string",
-      "unique": true,
-      "required": true
-    },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "icon": {
       "allowedTypes": [
         "images"
       ],
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": true
     }
   }
 }

@@ -2,17 +2,18 @@
   "collectionName": "components_landing_page_user_testmonials",
   "info": {
     "displayName": "userTestmonials",
-    "icon": "apps"
+    "icon": "apps",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "avatar": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "name": {
       "type": "string",
@@ -22,9 +23,10 @@
       "type": "string",
       "required": true
     },
-    "testmonials": {
+    "testmonial": {
       "type": "text",
-      "maxLength": 255
+      "maxLength": 255,
+      "required": true
     }
   }
 }

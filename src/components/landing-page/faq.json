@@ -2,17 +2,20 @@
   "collectionName": "components_landing_page_faqs",
   "info": {
     "displayName": "FAQ",
-    "icon": "apps"
+    "icon": "apps",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "question": {
       "type": "string",
-      "maxLength": 155
+      "maxLength": 155,
+      "required": true
     },
     "response": {
       "type": "text",
-      "maxLength": 455
+      "maxLength": 455,
+      "required": true
     }
   }
 }

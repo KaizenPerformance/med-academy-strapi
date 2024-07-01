@@ -13,58 +13,46 @@
   "pluginOptions": {},
   "attributes": {
     "headingTitle": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "headingDescription": {
       "type": "text",
       "required": true,
       "default": "355"
     },
-    "mainVideo": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "videos"
-      ]
-    },
-    "aboutUs": {
-      "type": "text",
-      "maxLength": 188
-    },
     "cardAboutUs": {
       "displayName": "cardAboutUs",
       "type": "component",
       "repeatable": true,
-      "component": "landing-page.card-about-us"
-    },
-    "TestmonialsText": {
-      "type": "text",
-      "required": true,
-      "maxLength": 165
-    },
-    "HighLightsText": {
-      "type": "text",
-      "required": true,
-      "maxLength": 165
+      "component": "landing-page.card-about-us",
+      "required": true
     },
     "faq": {
       "displayName": "FAQ",
       "type": "component",
       "repeatable": true,
-      "component": "landing-page.faq"
-    },
-    "highLights": {
-      "displayName": "highLights",
-      "type": "component",
-      "repeatable": true,
-      "component": "landing-page.high-lights"
+      "component": "landing-page.faq",
+      "required": true
     },
     "userTestmonials": {
       "displayName": "userTestmonials",
       "type": "component",
       "repeatable": true,
-      "component": "landing-page.user-testmonials"
+      "component": "landing-page.user-testmonials",
+      "required": true
+    },
+    "headingPurpleTitle": {
+      "type": "string",
+      "required": true
+    },
+    "approvalsImages": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

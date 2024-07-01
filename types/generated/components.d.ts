@@ -18,15 +18,14 @@ export interface LandingPageCardAboutUs extends Schema.Component {
     description: '';
   };
   attributes: {
-    icon: Attribute.Text;
     title: Attribute.String & Attribute.Required;
     description: Attribute.Text &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
         maxLength: 155;
       }>;
-    linkTo: Attribute.String & Attribute.Required & Attribute.Unique;
-    image: Attribute.Media;
+    image: Attribute.Media & Attribute.Required;
+    icon: Attribute.Media & Attribute.Required;
   };
 }
 
@@ -35,13 +34,16 @@ export interface LandingPageFaq extends Schema.Component {
   info: {
     displayName: 'FAQ';
     icon: 'apps';
+    description: '';
   };
   attributes: {
     question: Attribute.String &
+      Attribute.Required &
       Attribute.SetMinMaxLength<{
         maxLength: 155;
       }>;
     response: Attribute.Text &
+      Attribute.Required &
       Attribute.SetMinMaxLength<{
         maxLength: 455;
       }>;
@@ -70,12 +72,14 @@ export interface LandingPageUserTestmonials extends Schema.Component {
   info: {
     displayName: 'userTestmonials';
     icon: 'apps';
+    description: '';
   };
   attributes: {
     avatar: Attribute.Media & Attribute.Required;
     name: Attribute.String & Attribute.Required;
     occupation: Attribute.String & Attribute.Required;
-    testmonials: Attribute.Text &
+    testmonial: Attribute.Text &
+      Attribute.Required &
       Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;

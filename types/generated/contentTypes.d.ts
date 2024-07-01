@@ -852,29 +852,20 @@ export interface ApiLandingPageLandingPage extends Schema.SingleType {
     draftAndPublish: false;
   };
   attributes: {
-    headingTitle: Attribute.String;
+    headingTitle: Attribute.String & Attribute.Required;
     headingDescription: Attribute.Text &
       Attribute.Required &
       Attribute.DefaultTo<'355'>;
-    mainVideo: Attribute.Media;
-    aboutUs: Attribute.Text &
-      Attribute.SetMinMaxLength<{
-        maxLength: 188;
-      }>;
-    cardAboutUs: Attribute.Component<'landing-page.card-about-us', true>;
-    TestmonialsText: Attribute.Text &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        maxLength: 165;
-      }>;
-    HighLightsText: Attribute.Text &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        maxLength: 165;
-      }>;
-    faq: Attribute.Component<'landing-page.faq', true>;
-    highLights: Attribute.Component<'landing-page.high-lights', true>;
-    userTestmonials: Attribute.Component<'landing-page.user-testmonials', true>;
+    cardAboutUs: Attribute.Component<'landing-page.card-about-us', true> &
+      Attribute.Required;
+    faq: Attribute.Component<'landing-page.faq', true> & Attribute.Required;
+    userTestmonials: Attribute.Component<
+      'landing-page.user-testmonials',
+      true
+    > &
+      Attribute.Required;
+    headingPurpleTitle: Attribute.String & Attribute.Required;
+    approvalsImages: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -885,45 +876,6 @@ export interface ApiLandingPageLandingPage extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::landing-page.landing-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiStudentStudent extends Schema.CollectionType {
-  collectionName: 'students';
-  info: {
-    singularName: 'student';
-    pluralName: 'students';
-    displayName: 'Student';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    name: Attribute.String & Attribute.Required & Attribute.Unique;
-    avatar: Attribute.Media & Attribute.Required;
-    birth: Attribute.Date;
-    approved: Attribute.Boolean &
-      Attribute.Required &
-      Attribute.DefaultTo<false>;
-    collocation: Attribute.Integer;
-    email: Attribute.String & Attribute.Required & Attribute.Unique;
-    specialization: Attribute.String;
-    school: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::student.student',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::student.student',
       'oneToOne',
       'admin::user'
     > &
@@ -952,7 +904,6 @@ declare module '@strapi/types' {
       'api::blog-post.blog-post': ApiBlogPostBlogPost;
       'api::course.course': ApiCourseCourse;
       'api::landing-page.landing-page': ApiLandingPageLandingPage;
-      'api::student.student': ApiStudentStudent;
     }
   }
 }
