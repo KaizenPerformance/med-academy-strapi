@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_landing_page_high_lights",
+  "info": {
+    "displayName": "highLights",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "maxLength": 115,
+      "required": true
+    }
+  }
+}

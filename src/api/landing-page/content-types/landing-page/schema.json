@@ -1,0 +1,58 @@
+{
+  "kind": "singleType",
+  "collectionName": "landing_pages",
+  "info": {
+    "singularName": "landing-page",
+    "pluralName": "landing-pages",
+    "displayName": "HomePage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "headingTitle": {
+      "type": "string",
+      "required": true
+    },
+    "headingDescription": {
+      "type": "text",
+      "required": true,
+      "default": "355"
+    },
+    "cardAboutUs": {
+      "displayName": "cardAboutUs",
+      "type": "component",
+      "repeatable": true,
+      "component": "landing-page.card-about-us",
+      "required": true
+    },
+    "faq": {
+      "displayName": "FAQ",
+      "type": "component",
+      "repeatable": true,
+      "component": "landing-page.faq",
+      "required": true
+    },
+    "userTestmonials": {
+      "displayName": "userTestmonials",
+      "type": "component",
+      "repeatable": true,
+      "component": "landing-page.user-testmonials",
+      "required": true
+    },
+    "headingPurpleTitle": {
+      "type": "string",
+      "required": true
+    },
+    "approvalsImages": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

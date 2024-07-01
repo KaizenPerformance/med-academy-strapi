@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_landing_page_user_testmonials",
+  "info": {
+    "displayName": "userTestmonials",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "occupation": {
+      "type": "string",
+      "required": true
+    },
+    "testmonial": {
+      "type": "text",
+      "maxLength": 255,
+      "required": true
+    }
+  }
+}
