@@ -21,7 +21,8 @@ module.exports = [
         "http://localhost:3000",
         "http://127.0.0.1:1337",
         "http://localhost:1337",
-        "https://strapi-production-bb55.up.railway.app"
+        "https://strapi-production-bb55.up.railway.app",
+        "https://med-academy-cra-app.vercel.app"
       ]
     }
   },
